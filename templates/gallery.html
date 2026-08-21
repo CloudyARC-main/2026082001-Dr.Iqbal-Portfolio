@@ -1,0 +1,399 @@
+{% extends "base.html" %}
+
+{% block title %}ফটো গ্যালারি • ডা: মো: ইকবাল হোসেন{% endblock %}
+
+{% block description %}ডা: মো: ইকবাল হোসেনের চিকিৎসা সেবা, ক্যাম্পেইন ও জনসম্পৃক্ততার স্মরণীয় মুহূর্তের গ্যালারি।{% endblock %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container">
+    <div class="reveal show">
+      <h1 class="section-title">ফটো গ্যালারি</h1>
+      <p class="section-subtitle">কর্মসূচি ও জনসম্পৃক্ততার স্মরণীয় মুহূর্ত</p>
+    </div>
+
+    <div class="filter-bar reveal show" data-gallery-filter="">
+      <button class="filter-btn active" type="button" data-filter="all">সব</button>
+      <button class="filter-btn" type="button" data-filter="personal">ব্যক্তিগত</button>
+    </div>
+
+    <div class="g-grid" id="galleryGrid">
+      <div class="cardx g-item reveal show" data-gallery-item="" tabindex="0" role="button" aria-label="গ্যালারি দেখুন: ডাক্তার চেম্বার রোগী দেখার সময়" data-category="personal" data-image="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%209.56.38%20AM.jpeg" data-title="ডাক্তার চেম্বার রোগী দেখার সময়" data-caption="" data-catname="ব্যক্তিগত">
+        <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%209.56.38%20AM.jpeg" alt="ডাক্তার চেম্বার রোগী দেখার সময়">
+        <div class="cap">
+          <div class="small text-muted">ব্যক্তিগত</div>
+          <div style="font-weight:900">ডাক্তার চেম্বার রোগী দেখার সময়</div>
+          <div class="text-muted small"></div>
+        </div>
+      </div>
+
+      <div class="cardx g-item reveal show" data-gallery-item="" tabindex="0" role="button" aria-label="গ্যালারি দেখুন: ডাক্তার চেম্বার রোগী দেখার সময়" data-category="personal" data-image="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-o04-08%20at%209.56.38%20AM.jpeg" data-title="ডাক্তার চেম্বার রোগী দেখার সময়" data-caption="" data-catname="ব্যক্তিগত">
+        <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-o04-08%20at%209.56.38%20AM.jpeg" alt="ডাক্তার চেম্বার রোগী দেখার সময়">
+        <div class="cap">
+          <div class="small text-muted">ব্যক্তিগত</div>
+          <div style="font-weight:900">ডাক্তার চেম্বার রোগী দেখার সময়</div>
+          <div class="text-muted small"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Modal -->
+<div class="g-modal" id="galleryModal" aria-hidden="true">
+  <div class="g-backdrop" data-g-close=""></div>
+
+  <div class="g-dialog" role="dialog" aria-modal="true" aria-labelledby="gModalTitle">
+    <button class="g-close" type="button" data-g-close="" aria-label="বন্ধ করুন">×</button>
+
+    <div class="g-modal-body">
+      <div class="g-modal-media">
+        <img id="gModalImg" src="" alt="">
+      </div>
+
+      <div class="g-modal-meta">
+        <div class="g-modal-cat" id="gModalCat"></div>
+        <h3 class="g-modal-title" id="gModalTitle"></h3>
+        <p class="g-modal-caption" id="gModalCaption"></p>
+
+        <div class="g-modal-actions">
+          <a class="btn-outlinex" id="gModalOpenOriginal" href="#" target="_blank" rel="noopener">ছবি নতুন ট্যাবে</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="g-nav g-prev" type="button" data-g-prev="" aria-label="আগের ছবি">‹</button>
+    <button class="g-nav g-next" type="button" data-g-next="" aria-label="পরের ছবি">›</button>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<style>
+  /* Gallery specific styles */
+  .cardx {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 22px 60px rgba(8,65,61,.10);
+    border: 1px solid #dcebe8;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .cardx:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 30px 70px rgba(8,65,61,.14);
+  }
+
+  .section-title {
+    font-size: clamp(31px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 13px;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    color: #667777;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .reveal {
+    opacity: 1 !important;
+  }
+  .text-muted {
+    color: #667777 !important;
+  }
+
+  /* Gallery Grid */
+  .g-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .g-item {
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+  }
+  .g-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 22px 60px rgba(8,65,61,.10);
+  }
+  .g-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+  .g-item .cap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 16px 14px;
+    background: linear-gradient(transparent, rgba(0,0,0,.55));
+    color: #fff;
+  }
+  .g-item .cap .text-muted {
+    color: rgba(255,255,255,.75) !important;
+  }
+
+  /* Filter Bar */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 10px;
+  }
+  .filter-btn {
+    background: #f0f6f5;
+    border: 1px solid #dcebe8;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #667777;
+    transition: .2s;
+    cursor: pointer;
+  }
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: #087f73;
+    color: #fff;
+    border-color: #087f73;
+  }
+
+  /* Gallery Modal */
+  .g-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,.7);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .g-modal.active {
+    display: flex;
+  }
+  .g-dialog {
+    background: #fff;
+    border-radius: 28px;
+    max-width: 850px;
+    width: 100%;
+    max-height: 95vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .g-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 10;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 28px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: .2s;
+  }
+  .g-close:hover {
+    background: rgba(0,0,0,.7);
+  }
+  .g-modal-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .g-modal-media img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: #f5f5f5;
+  }
+  .g-modal-meta {
+    padding: 22px 28px 28px;
+  }
+  .g-modal-cat {
+    color: #087f73;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .g-modal-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 4px 0 6px;
+  }
+  .g-modal-caption {
+    color: #667777;
+    line-height: 1.7;
+  }
+  .g-modal-actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+  }
+  .g-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,.4);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 28px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: .2s;
+    z-index: 10;
+  }
+  .g-nav:hover {
+    background: rgba(0,0,0,.6);
+  }
+  .g-prev {
+    left: 12px;
+  }
+  .g-next {
+    right: 12px;
+  }
+
+  .btn-outlinex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 14px;
+    padding: 13px 21px;
+    font-weight: 700;
+    transition: .25s;
+    background: #fff;
+    color: #087f73;
+    border-color: #cfe8e4;
+    border: 1px solid #cfe8e4;
+    text-decoration: none;
+  }
+  .btn-outlinex:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.07);
+    color: #087f73;
+    text-decoration: none;
+  }
+
+  @media(max-width:767px) {
+    .g-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .g-item img {
+      height: 160px;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+  // --- Gallery Filter & Modal ---
+  const galleryItems = document.querySelectorAll('#galleryGrid .g-item');
+  const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
+
+  // Gallery filter
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Gallery Modal
+  const modal = document.getElementById('galleryModal');
+  const modalImg = document.getElementById('gModalImg');
+  const modalTitle = document.getElementById('gModalTitle');
+  const modalCat = document.getElementById('gModalCat');
+  const modalCaption = document.getElementById('gModalCaption');
+  const modalOpen = document.getElementById('gModalOpenOriginal');
+  let currentGalleryItems = [];
+  let currentIndex = 0;
+
+  function openGallery(index) {
+    const item = currentGalleryItems[index];
+    if (!item) return;
+    modalImg.src = item.dataset.image;
+    modalTitle.textContent = item.dataset.title || '';
+    modalCat.textContent = item.dataset.category === 'personal' ? 'ব্যক্তিগত' : '';
+    modalCaption.textContent = item.dataset.caption || '';
+    modalOpen.href = item.dataset.image;
+    currentIndex = index;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', function() {
+      currentGalleryItems = Array.from(galleryItems);
+      openGallery(i);
+    });
+  });
+
+  // Close modal on backdrop click
+  document.querySelector('[data-g-close]').addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  document.querySelector('.g-close').addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  document.querySelector('.g-prev').addEventListener('click', () => {
+    if (currentIndex > 0) openGallery(currentIndex - 1);
+  });
+
+  document.querySelector('.g-next').addEventListener('click', () => {
+    if (currentIndex < currentGalleryItems.length - 1) openGallery(currentIndex + 1);
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape') {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    if (e.key === 'ArrowLeft' && currentIndex > 0) openGallery(currentIndex - 1);
+    if (e.key === 'ArrowRight' && currentIndex < currentGalleryItems.length - 1) openGallery(currentIndex + 1);
+  });
+</script>
+{% endblock %}
