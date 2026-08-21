@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+
+{% block title %}শপ/ইবুক • ডা: মো: ইকবাল হোসেন{% endblock %}
+
+{% block description %}ডা: মো: ইকবাল হোসেনের স্বাস্থ্য বিষয়ক ইবুক ও ডিজিটাল প্রডাক্ট। সুস্থ জীবনযাপন, চিকিৎসা পরামর্শ ও সচেতনতামূলক বই।{% endblock %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container">
+    <div class="reveal d-flex flex-wrap align-items-end justify-content-between gap-3 show">
+      <div>
+        <h1 class="section-title">শপ / ইবুক</h1>
+        <p class="section-subtitle">স্বাস্থ্য বিষয়ক ডিজিটাল প্রকাশনা ও প্রডাক্ট</p>
+      </div>
+
+      <form class="d-flex gap-2" method="get" action="/shop">
+        <input class="form-control" style="border-radius:14px" name="q" value="" placeholder="সার্চ...">
+        <button class="btn btn-primary" type="submit" style="border-radius:14px; background:#087f73; border-color:#087f73;">খুঁজুন</button>
+      </form>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="reveal filter-bar mt-2 show" data-shop-filter="">
+      <button class="filter-btn active" type="button" data-filter="all">সব</button>
+      <button class="filter-btn" type="button" data-filter="ebook">ইবুক</button>
+      <button class="filter-btn" type="button" data-filter="digital">ডিজিটাল প্রডাক্ট</button>
+    </div>
+
+    <div class="row g-4 mt-1" id="shopGrid">
+      <!-- Product Item 1 -->
+      <div class="col-md-6 col-lg-4 reveal show" data-shop-item="" data-category="ebook">
+        <div class="cardx h-100 overflow-hidden">
+          <div class="product-img-wrap">
+            <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%2010.10.38%20AM.jpeg" alt="সুস্থ যৌন জীবন" style="width:100%; height:220px; object-fit:cover">
+            <span class="product-badge">ইবুক</span>
+          </div>
+          <div class="cardx-body">
+            <div class="small text-muted">
+              <i class="fa-regular fa-book"></i> ইবুক
+            </div>
+
+            <div style="font-weight:900; font-size:18px" class="mt-1">
+              <a href="/product/modern-homeopathy-guide" style="color:#102a2a; text-decoration:none;">সুস্থ যৌন জীবন</a>
+            </div>
+
+            <div class="text-muted mt-2">যৌন স্বাস্থ্য সম্পর্কিত সচেতনতা ও হোমিওপ্যাথি চিকিৎসা পদ্ধতি নিয়ে একটি গুরুত্বপূর্ণ ইবুক।</div>
+
+            <div class="d-flex align-items-center justify-content-between mt-3">
+              <span class="price">৳২১০</span>
+              <a class="btn-primaryx py-2 px-3" href="/product/modern-homeopathy-guide">বিস্তারিত</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Item 2 -->
+      <div class="col-md-6 col-lg-4 reveal show" data-shop-item="" data-category="ebook">
+        <div class="cardx h-100 overflow-hidden">
+          <div class="product-img-wrap">
+            <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%2010.10.38%20AM.jpeg" alt="হোমিওপ্যাথি ও আধুনিক চিকিৎসা" style="width:100%; height:220px; object-fit:cover">
+            <span class="product-badge">ইবুক</span>
+          </div>
+          <div class="cardx-body">
+            <div class="small text-muted">
+              <i class="fa-regular fa-book"></i> ইবুক
+            </div>
+
+            <div style="font-weight:900; font-size:18px" class="mt-1">
+              <a href="/product/homeopathy-modern-medicine" style="color:#102a2a; text-decoration:none;">হোমিওপ্যাথি ও আধুনিক চিকিৎসা</a>
+            </div>
+
+            <div class="text-muted mt-2">হোমিওপ্যাথি চিকিৎসার আধুনিক পদ্ধতি ও গবেষণা বিষয়ক একটি বিস্তারিত ইবুক।</div>
+
+            <div class="d-flex align-items-center justify-content-between mt-3">
+              <span class="price">৳১৮০</span>
+              <a class="btn-primaryx py-2 px-3" href="/product/homeopathy-modern-medicine">বিস্তারিত</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Item 3 -->
+      <div class="col-md-6 col-lg-4 reveal show" data-shop-item="" data-category="digital">
+        <div class="cardx h-100 overflow-hidden">
+          <div class="product-img-wrap">
+            <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%2010.10.38%20AM.jpeg" alt="স্বাস্থ্য টিপস ডিজিটাল গাইড" style="width:100%; height:220px; object-fit:cover">
+            <span class="product-badge">ডিজিটাল</span>
+          </div>
+          <div class="cardx-body">
+            <div class="small text-muted">
+              <i class="fa-solid fa-file-pdf"></i> ডিজিটাল প্রডাক্ট
+            </div>
+
+            <div style="font-weight:900; font-size:18px" class="mt-1">
+              <a href="/product/health-tips-digital-guide" style="color:#102a2a; text-decoration:none;">স্বাস্থ্য টিপস ডিজিটাল গাইড</a>
+            </div>
+
+            <div class="text-muted mt-2">সুস্থ জীবনযাপনের জন্য প্রয়োজনীয় স্বাস্থ্য টিপস ও পরামর্শ সম্বলিত ডিজিটাল গাইড।</div>
+
+            <div class="d-flex align-items-center justify-content-between mt-3">
+              <span class="price">৳১৫০</span>
+              <a class="btn-primaryx py-2 px-3" href="/product/health-tips-digital-guide">বিস্তারিত</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Item 4 -->
+      <div class="col-md-6 col-lg-4 reveal show" data-shop-item="" data-category="ebook">
+        <div class="cardx h-100 overflow-hidden">
+          <div class="product-img-wrap">
+            <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%2010.10.38%20AM.jpeg" alt="চর্মরোগ ও হোমিওপ্যাথি" style="width:100%; height:220px; object-fit:cover">
+            <span class="product-badge">ইবুক</span>
+          </div>
+          <div class="cardx-body">
+            <div class="small text-muted">
+              <i class="fa-regular fa-book"></i> ইবুক
+            </div>
+
+            <div style="font-weight:900; font-size:18px" class="mt-1">
+              <a href="/product/skin-disease-homeopathy" style="color:#102a2a; text-decoration:none;">চর্মরোগ ও হোমিওপ্যাথি</a>
+            </div>
+
+            <div class="text-muted mt-2">চর্মরোগের কারণ, প্রতিরোধ ও হোমিওপ্যাথি চিকিৎসা পদ্ধতি নিয়ে বিস্তারিত ইবুক।</div>
+
+            <div class="d-flex align-items-center justify-content-between mt-3">
+              <span class="price">৳১৯০</span>
+              <a class="btn-primaryx py-2 px-3" href="/product/skin-disease-homeopathy">বিস্তারিত</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty message for filter -->
+    <div class="text-muted mt-3" id="shopEmpty" style="display:none">এই ক্যাটাগরিতে কোন প্রডাক্ট নেই।</div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<style>
+  /* Shop specific styles */
+  .section-title {
+    font-size: clamp(31px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 13px;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    color: #667777;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .reveal {
+    opacity: 1 !important;
+  }
+  .text-muted {
+    color: #667777 !important;
+  }
+
+  .cardx {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 22px 60px rgba(8,65,61,.10);
+    border: 1px solid #dcebe8;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .cardx:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 70px rgba(8,65,61,.14);
+  }
+  .cardx-body {
+    padding: 22px;
+  }
+
+  /* Product Image */
+  .product-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .product-img-wrap img {
+    transition: transform 0.5s ease;
+  }
+  .cardx:hover .product-img-wrap img {
+    transform: scale(1.05);
+  }
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #087f73, #16a394);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(8,127,115,.3);
+  }
+
+  .price {
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #087f73;
+  }
+
+  /* Filter Bar */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 10px;
+  }
+  .filter-btn {
+    background: #f0f6f5;
+    border: 1px solid #dcebe8;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #667777;
+    transition: .2s;
+    cursor: pointer;
+  }
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: #087f73;
+    color: #fff;
+    border-color: #087f73;
+  }
+
+  .btn-primaryx {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 14px;
+    padding: 13px 21px;
+    font-weight: 700;
+    transition: .25s;
+    background: #087f73;
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 14px 30px rgba(8,127,115,.2);
+    text-decoration: none;
+  }
+  .btn-primaryx:hover {
+    background: #075c55;
+    color: #fff;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: #087f73 !important;
+    border-color: #087f73 !important;
+  }
+  .btn-primary:hover {
+    background: #075c55 !important;
+    border-color: #075c55 !important;
+  }
+
+  .form-control {
+    border-radius: 14px !important;
+    border: 1px solid #dcebe8;
+  }
+  .form-control:focus {
+    border-color: #087f73;
+    box-shadow: 0 0 0 3px rgba(8,127,115,.15);
+  }
+
+  @media(max-width:767px) {
+    .section-title {
+      font-size: 32px;
+    }
+    .section-subtitle {
+      font-size: 16px;
+    }
+    .cardx-body {
+      padding: 18px;
+    }
+    .filter-bar {
+      gap: 6px;
+    }
+    .filter-btn {
+      font-size: 12px;
+      padding: 6px 14px;
+    }
+    .price {
+      font-size: 20px;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+  (function () {
+    const wrap = document.querySelector('[data-shop-filter]');
+    if (!wrap) return;
+
+    const btns = Array.from(wrap.querySelectorAll('.filter-btn'));
+    const items = Array.from(document.querySelectorAll('[data-shop-item]'));
+    const empty = document.getElementById('shopEmpty');
+
+    function getParam(name){
+      const u = new URL(window.location.href);
+      return (u.searchParams.get(name) || '').trim();
+    }
+
+    function setParam(name, value){
+      const u = new URL(window.location.href);
+      if (value && value !== 'all') u.searchParams.set(name, value);
+      else u.searchParams.delete(name);
+      history.replaceState({}, '', u.toString());
+    }
+
+    function setActiveByCat(cat){
+      btns.forEach(b => b.classList.remove('active'));
+      const found = btns.find(b => (b.getAttribute('data-filter') || 'all') === cat);
+      (found || btns[0])?.classList.add('active');
+    }
+
+    function applyFilter(cat){
+      let visible = 0;
+
+      items.forEach(it => {
+        const c = (it.getAttribute('data-category') || 'uncategorized').trim();
+        const show = (cat === 'all' || c === cat);
+        it.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      if (empty) empty.style.display = (visible === 0 ? '' : 'none');
+    }
+
+    // initial cat from URL (?cat=...)
+    const initial = getParam('cat');
+    const initialCat = initial !== '' ? initial : 'all';
+    setActiveByCat(initialCat);
+    applyFilter(initialCat);
+
+    // click behavior (no reload + update URL)
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = (btn.getAttribute('data-filter') || 'all').trim();
+        setActiveByCat(cat);
+        applyFilter(cat);
+        setParam('cat', cat === 'all' ? '' : cat);
+      });
+    });
+
+  })();
+</script>
+{% endblock %}

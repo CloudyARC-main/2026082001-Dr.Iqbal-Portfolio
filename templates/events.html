@@ -1,0 +1,560 @@
+{% extends "base.html" %}
+
+{% block title %}ইভেন্ট • ডা: মো: ইকবাল হোসেন{% endblock %}
+
+{% block description %}ডা: মো: ইকবাল হোসেনের আয়োজিত স্বাস্থ্য ক্যাম্প, সেমিনার ও জনকল্যাণমূলক ইভেন্টসমূহ।{% endblock %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container">
+    <div class="reveal show">
+      <h1 class="section-title">ইভেন্ট</h1>
+      <p class="section-subtitle">স্বাস্থ্য সচেতনতা ও জনকল্যাণমূলক আয়োজন</p>
+    </div>
+
+    <div class="filter-bar reveal show" data-event-filter="">
+      <button class="filter-btn active" type="button" data-filter="all">সব</button>
+      <button class="filter-btn" type="button" data-filter="camp">স্বাস্থ্য ক্যাম্প</button>
+      <button class="filter-btn" type="button" data-filter="seminar">সেমিনার</button>
+      <button class="filter-btn" type="button" data-filter="awareness">সচেতনতামূলক</button>
+    </div>
+
+    <div class="e-grid" id="eventGrid">
+      <!-- Event Item 1 -->
+      <div class="cardx e-item reveal show" data-event-item="" data-category="camp">
+        <div class="e-date">
+          <span class="e-day">২৩</span>
+          <span class="e-month">এপ্রিল</span>
+          <span class="e-year">২০২৬</span>
+        </div>
+        <div class="e-body">
+          <div class="small text-muted">স্বাস্থ্য ক্যাম্প</div>
+          <h4>ফ্রি ডায়াবেটিস ও স্বাস্থ্য ক্যাম্প</h4>
+          <p class="text-muted small">বিনামূল্যে ডায়াবেটিস পরীক্ষা, স্বাস্থ্য পরামর্শ ও হোমিওপ্যাথি চিকিৎসা সেবা।</p>
+          <div class="e-meta">
+            <span><i class="fa-regular fa-clock"></i> সকাল ১০টা - বিকাল ৪টা</span>
+            <span><i class="fa-solid fa-location-dot"></i> হাবিব কমপ্লেক্স, দক্ষিনখান বাজার, উত্তরা</span>
+          </div>
+          <a href="/events/free-health-camp" class="btn-outlinex py-2 px-3 mt-2">বিস্তারিত</a>
+        </div>
+      </div>
+
+      <!-- Event Item 2 -->
+      <div class="cardx e-item reveal show" data-event-item="" data-category="seminar">
+        <div class="e-date">
+          <span class="e-day">১৫</span>
+          <span class="e-month">মে</span>
+          <span class="e-year">২০২৬</span>
+        </div>
+        <div class="e-body">
+          <div class="small text-muted">সেমিনার</div>
+          <h4>হোমিওপ্যাথি ও আধুনিক চিকিৎসা পদ্ধতি সেমিনার</h4>
+          <p class="text-muted small">হোমিওপ্যাথি চিকিৎসার আধুনিক পদ্ধতি ও গবেষণা বিষয়ক আলোচনা সভা।</p>
+          <div class="e-meta">
+            <span><i class="fa-regular fa-clock"></i> বিকাল ৩টা - সন্ধ্যা ৬টা</span>
+            <span><i class="fa-solid fa-location-dot"></i> উত্তরা কমিউনিটি সেন্টার</span>
+          </div>
+          <a href="/events/homeopathy-seminar" class="btn-outlinex py-2 px-3 mt-2">বিস্তারিত</a>
+        </div>
+      </div>
+
+      <!-- Event Item 3 -->
+      <div class="cardx e-item reveal show" data-event-item="" data-category="awareness">
+        <div class="e-date">
+          <span class="e-day">০৫</span>
+          <span class="e-month">জুন</span>
+          <span class="e-year">২০২৬</span>
+        </div>
+        <div class="e-body">
+          <div class="small text-muted">সচেতনতামূলক</div>
+          <h4>চর্মরোগ সচেতনতা ও প্রতিরোধ কর্মশালা</h4>
+          <p class="text-muted small">চর্মরোগের কারণ, প্রতিরোধ ও হোমিওপ্যাথি চিকিৎসা নিয়ে সচেতনতামূলক কর্মশালা।</p>
+          <div class="e-meta">
+            <span><i class="fa-regular fa-clock"></i> সকাল ১১টা - দুপুর ২টা</span>
+            <span><i class="fa-solid fa-location-dot"></i> মহিলা সমিতি মিলনায়তন</span>
+          </div>
+          <a href="/events/skin-awareness-workshop" class="btn-outlinex py-2 px-3 mt-2">বিস্তারিত</a>
+        </div>
+      </div>
+
+      <!-- Event Item 4 -->
+      <div class="cardx e-item reveal show" data-event-item="" data-category="camp">
+        <div class="e-date">
+          <span class="e-day">২০</span>
+          <span class="e-month">জুলাই</span>
+          <span class="e-year">২০২৬</span>
+        </div>
+        <div class="e-body">
+          <div class="small text-muted">স্বাস্থ্য ক্যাম্প</div>
+          <h4>যৌন স্বাস্থ্য সচেতনতা ও পরামর্শ ক্যাম্প</h4>
+          <p class="text-muted small">যৌন স্বাস্থ্য সম্পর্কিত সমস্যা নিয়ে গোপনীয় পরামর্শ ও চিকিৎসা সেবা।</p>
+          <div class="e-meta">
+            <span><i class="fa-regular fa-clock"></i> সকাল ৯টা - বিকাল ৫টা</span>
+            <span><i class="fa-solid fa-location-dot"></i> মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টার</span>
+          </div>
+          <a href="/events/sexual-health-camp" class="btn-outlinex py-2 px-3 mt-2">বিস্তারিত</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Event Detail Modal -->
+<div class="e-modal" id="eventModal" aria-hidden="true">
+  <div class="e-backdrop" data-e-close=""></div>
+
+  <div class="e-dialog" role="dialog" aria-modal="true" aria-labelledby="eModalTitle">
+    <button class="e-close" type="button" data-e-close="" aria-label="বন্ধ করুন">×</button>
+
+    <div class="e-modal-body">
+      <div class="e-modal-header">
+        <div class="e-modal-date" id="eModalDate"></div>
+        <div class="e-modal-cat" id="eModalCat"></div>
+      </div>
+
+      <div class="e-modal-content">
+        <h3 class="e-modal-title" id="eModalTitle"></h3>
+        <p class="e-modal-desc" id="eModalDesc"></p>
+
+        <div class="e-modal-meta">
+          <div class="e-modal-time" id="eModalTime">
+            <i class="fa-regular fa-clock"></i> <span></span>
+          </div>
+          <div class="e-modal-location" id="eModalLocation">
+            <i class="fa-solid fa-location-dot"></i> <span></span>
+          </div>
+        </div>
+
+        <div class="e-modal-actions">
+          <a class="btn-primaryx" id="eModalRegister" href="#">রেজিস্ট্রেশন করুন</a>
+          <a class="btn-outlinex" id="eModalDetails" href="#">বিস্তারিত</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<style>
+  /* Event specific styles */
+  .section-title {
+    font-size: clamp(31px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 13px;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    color: #667777;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .reveal {
+    opacity: 1 !important;
+  }
+  .text-muted {
+    color: #667777 !important;
+  }
+
+  /* Event Grid */
+  .e-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  .cardx {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 22px 60px rgba(8,65,61,.10);
+    border: 1px solid #dcebe8;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .cardx:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 70px rgba(8,65,61,.14);
+  }
+
+  .e-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .e-date {
+    background: linear-gradient(135deg, #087f73, #16a394);
+    color: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .e-date .e-day {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .e-date .e-month {
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0.9;
+  }
+  .e-date .e-year {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-left: auto;
+  }
+
+  .e-body {
+    padding: 20px 22px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .e-body h4 {
+    font-weight: 800;
+    font-size: 18px;
+    margin: 4px 0 8px;
+    color: #102a2a;
+  }
+
+  .e-body .text-muted {
+    font-size: 14px;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .e-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 10px 0 12px;
+    font-size: 13px;
+    color: #667777;
+  }
+  .e-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .e-meta i {
+    color: #087f73;
+    width: 16px;
+  }
+
+  /* Filter Bar */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 10px;
+  }
+  .filter-btn {
+    background: #f0f6f5;
+    border: 1px solid #dcebe8;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #667777;
+    transition: .2s;
+    cursor: pointer;
+  }
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: #087f73;
+    color: #fff;
+    border-color: #087f73;
+  }
+
+  /* Event Modal */
+  .e-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,.7);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .e-modal.active {
+    display: flex;
+  }
+  .e-dialog {
+    background: #fff;
+    border-radius: 28px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 95vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .e-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 10;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 28px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: .2s;
+  }
+  .e-close:hover {
+    background: rgba(0,0,0,.7);
+  }
+  .e-modal-body {
+    padding: 0;
+  }
+  .e-modal-header {
+    background: linear-gradient(135deg, #087f73, #16a394);
+    color: #fff;
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .e-modal-date {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .e-modal-cat {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.2);
+    padding: 4px 14px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+  }
+  .e-modal-content {
+    padding: 24px 28px 28px;
+  }
+  .e-modal-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    color: #102a2a;
+  }
+  .e-modal-desc {
+    color: #667777;
+    line-height: 1.7;
+    margin: 0 0 16px;
+  }
+  .e-modal-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 0;
+    border-top: 1px solid #dcebe8;
+    border-bottom: 1px solid #dcebe8;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #667777;
+  }
+  .e-modal-meta div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .e-modal-meta i {
+    color: #087f73;
+    width: 18px;
+  }
+  .e-modal-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primaryx {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 14px;
+    padding: 13px 21px;
+    font-weight: 700;
+    transition: .25s;
+    background: #087f73;
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 14px 30px rgba(8,127,115,.2);
+    text-decoration: none;
+  }
+  .btn-primaryx:hover {
+    background: #075c55;
+    color: #fff;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .btn-outlinex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 14px;
+    padding: 13px 21px;
+    font-weight: 700;
+    transition: .25s;
+    background: #fff;
+    color: #087f73;
+    border-color: #cfe8e4;
+    border: 1px solid #cfe8e4;
+    text-decoration: none;
+  }
+  .btn-outlinex:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.07);
+    color: #087f73;
+    text-decoration: none;
+  }
+
+  @media(max-width:767px) {
+    .e-grid {
+      grid-template-columns: 1fr;
+    }
+    .e-date .e-day {
+      font-size: 22px;
+    }
+    .e-modal-header {
+      padding: 18px 20px;
+      flex-direction: column;
+    }
+    .e-modal-content {
+      padding: 18px 20px 22px;
+    }
+    .e-modal-title {
+      font-size: 20px;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+  // --- Event Filter & Modal ---
+  const eventItems = document.querySelectorAll('#eventGrid .e-item');
+  const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
+
+  // Event filter
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      eventItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Event Modal
+  const modal = document.getElementById('eventModal');
+  const modalTitle = document.getElementById('eModalTitle');
+  const modalCat = document.getElementById('eModalCat');
+  const modalDesc = document.getElementById('eModalDesc');
+  const modalDate = document.getElementById('eModalDate');
+  const modalTime = document.getElementById('eModalTime');
+  const modalLocation = document.getElementById('eModalLocation');
+  const modalRegister = document.getElementById('eModalRegister');
+  const modalDetails = document.getElementById('eModalDetails');
+
+  // Event data mapping (from cards to modal)
+  const eventData = [
+    {
+      title: 'ফ্রি ডায়াবেটিস ও স্বাস্থ্য ক্যাম্প',
+      category: 'স্বাস্থ্য ক্যাম্প',
+      desc: 'বিনামূল্যে ডায়াবেটিস পরীক্ষা, স্বাস্থ্য পরামর্শ ও হোমিওপ্যাথি চিকিৎসা সেবা। বিশেষজ্ঞ চিকিৎসকদের তত্ত্বাবধানে সকল রোগীকে ব্যক্তিগত পরামর্শ প্রদান করা হবে।',
+      date: '২৩ এপ্রিল ২০২৬',
+      time: 'সকাল ১০টা - বিকাল ৪টা',
+      location: 'হাবিব কমপ্লেক্স, দক্ষিনখান বাজার, উত্তরা'
+    },
+    {
+      title: 'হোমিওপ্যাথি ও আধুনিক চিকিৎসা পদ্ধতি সেমিনার',
+      category: 'সেমিনার',
+      desc: 'হোমিওপ্যাথি চিকিৎসার আধুনিক পদ্ধতি ও গবেষণা বিষয়ক আলোচনা সভা। অভিজ্ঞ চিকিৎসকরা তাদের অভিজ্ঞতা ও গবেষণা ফলাফল তুলে ধরবেন।',
+      date: '১৫ মে ২০২৬',
+      time: 'বিকাল ৩টা - সন্ধ্যা ৬টা',
+      location: 'উত্তরা কমিউনিটি সেন্টার'
+    },
+    {
+      title: 'চর্মরোগ সচেতনতা ও প্রতিরোধ কর্মশালা',
+      category: 'সচেতনতামূলক',
+      desc: 'চর্মরোগের কারণ, প্রতিরোধ ও হোমিওপ্যাথি চিকিৎসা নিয়ে সচেতনতামূলক কর্মশালা। রোগীরা তাদের সমস্যা নিয়ে সরাসরি চিকিৎসকের সাথে কথা বলতে পারবেন।',
+      date: '০৫ জুন ২০২৬',
+      time: 'সকাল ১১টা - দুপুর ২টা',
+      location: 'মহিলা সমিতি মিলনায়তন'
+    },
+    {
+      title: 'যৌন স্বাস্থ্য সচেতনতা ও পরামর্শ ক্যাম্প',
+      category: 'স্বাস্থ্য ক্যাম্প',
+      desc: 'যৌন স্বাস্থ্য সম্পর্কিত সমস্যা নিয়ে গোপনীয় পরামর্শ ও চিকিৎসা সেবা। সম্পূর্ণ গোপনীয়তা ও সম্মান বজায় রেখে রোগীদের পরামর্শ প্রদান করা হবে।',
+      date: '২০ জুলাই ২০২৬',
+      time: 'সকাল ৯টা - বিকাল ৫টা',
+      location: 'মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টার'
+    }
+  ];
+
+  eventItems.forEach((item, i) => {
+    item.addEventListener('click', function() {
+      const data = eventData[i];
+      modalTitle.textContent = data.title;
+      modalCat.textContent = data.category;
+      modalDesc.textContent = data.desc;
+      modalDate.textContent = data.date;
+      modalTime.querySelector('span').textContent = data.time;
+      modalLocation.querySelector('span').textContent = data.location;
+      modalRegister.href = '/events/register/' + i;
+      modalDetails.href = '/events/' + i;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelector('[data-e-close]').addEventListener('click', closeModal);
+  document.querySelector('.e-close').addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script>
+{% endblock %}s

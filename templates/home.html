@@ -1,817 +1,613 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ডা: মো: ইকবাল হোসেন | হোমিওপ্যাথি চিকিৎসক</title>
-  <meta name="description" content="ডা: মো: ইকবাল হোসেন — হোমিওপ্যাথি চিকিৎসক ও আধুনিক চিকিৎসা গবেষক। চর্ম, যৌন ও দীর্ঘমেয়াদী রোগের জন্য ব্যক্তিকেন্দ্রিক চিকিৎসা সেবা।">
+{% extends "base.html" %}
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+{% block title %}ডা: মো: ইকবাল হোসেন | হোমিওপ্যাথি চিকিৎসক{% endblock %}
 
-  <!-- Bootstrap + Font Awesome -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+{% block content %}
 
-  <style>
-    :root{
-      --primary:#087f73;
-      --primary-dark:#075c55;
-      --secondary:#16a394;
-      --mint:#eaf8f5;
-      --cream:#f8fbfa;
-      --ink:#102a2a;
-      --muted:#667777;
-      --line:#dcebe8;
-      --white:#fff;
-      --shadow:0 22px 60px rgba(8,65,61,.10);
-      --radius:24px;
-    }
+<!-- HERO -->
+<header class="hero">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7 hero-content">
+        <div class="eyebrow"><span class="dot"></span> নিরাপদ ও ব্যক্তিকেন্দ্রিক চিকিৎসা সেবা</div>
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Hind Siliguri",sans-serif;
-      color:var(--ink);
-      background:#fff;
-      overflow-x:hidden;
-    }
-    a{text-decoration:none}
-    img{max-width:100%;display:block}
+        <h1>আপনার সুস্থতার পথে<br><span>অভিজ্ঞতার আস্থা</span></h1>
 
-    .topbar{
-      background:#082f2c;
-      color:#d9f3ef;
-      font-size:14px;
-    }
-    .topbar a{color:#d9f3ef}
-    .topbar-inner{
-      min-height:42px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:15px;
-    }
-    .topbar-left,.topbar-right{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-    .topbar i{color:#71d5c8;margin-right:5px}
+        <p class="hero-lead">
+          ডা: মো: ইকবাল হোসেন — হোমিওপ্যাথি চিকিৎসক ও আধুনিক চিকিৎসা গবেষক।
+          চর্ম, যৌন ও দীর্ঘমেয়াদী রোগের ক্ষেত্রে রোগীর সামগ্রিক অবস্থা বিবেচনা করে
+          ব্যক্তিকেন্দ্রিক চিকিৎসা পরিকল্পনা প্রদান করা হয়।
+        </p>
 
-    .navbar{
-      background:rgba(255,255,255,.94);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(8,127,115,.08);
-      transition:.3s;
-    }
-    .navbar.scrolled{box-shadow:0 12px 35px rgba(0,0,0,.08)}
-    .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
-    .brand img{
-      width:52px;height:52px;object-fit:cover;border-radius:16px;
-      box-shadow:0 8px 22px rgba(8,127,115,.16);
-    }
-    .brand-name{font-weight:800;font-size:20px;line-height:1.1}
-    .brand-tag{font-size:12px;color:var(--muted);font-weight:500}
-    .nav-link{
-      color:#284343!important;
-      font-weight:600;
-      padding:10px 12px!important;
-      border-radius:12px;
-      transition:.25s;
-    }
-    .nav-link:hover,.nav-link.active{
-      color:var(--primary)!important;
-      background:var(--mint);
-    }
-    .nav-cta{
-      background:var(--primary)!important;color:#fff!important;
-      padding:11px 18px!important;border-radius:13px;
-      box-shadow:0 9px 24px rgba(8,127,115,.22);
-    }
-    .nav-cta:hover{background:var(--primary-dark)!important;color:#fff!important}
+        <div class="hero-actions">
+          <a href="/contact" class="btn-main">
+            <i class="fa-solid fa-calendar-check"></i> সিরিয়াল নিতে যোগাযোগ করুন
+          </a>
+          <a href="/about-us" class="btn-soft">
+            চিকিৎসক সম্পর্কে <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
 
-    .hero{
-      position:relative;
-      min-height:calc(100vh - 96px);
-      display:flex;
-      align-items:center;
-      background:
-        radial-gradient(circle at 15% 15%,rgba(22,163,148,.13),transparent 32%),
-        radial-gradient(circle at 88% 25%,rgba(126,211,201,.18),transparent 30%),
-        linear-gradient(135deg,#f5fcfa 0%,#fff 58%,#effaf8 100%);
-      overflow:hidden;
-      padding:75px 0 90px;
-    }
-    .hero:before{
-      content:"";
-      position:absolute;
-      width:520px;height:520px;border-radius:50%;
-      background:rgba(22,163,148,.07);
-      right:-180px;top:-180px;
-    }
-    .hero:after{
-      content:"";
-      position:absolute;
-      width:300px;height:300px;border-radius:50%;
-      background:rgba(8,127,115,.05);
-      left:-150px;bottom:-130px;
-    }
-    .hero-content{position:relative;z-index:2}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      background:#e2f5f1;color:var(--primary);
-      border:1px solid #c8ebe5;
-      border-radius:999px;padding:8px 14px;
-      font-weight:700;font-size:14px;
-      margin-bottom:20px;
-    }
-    .eyebrow .dot{
-      width:8px;height:8px;border-radius:50%;background:#1db5a2;
-      box-shadow:0 0 0 5px rgba(29,181,162,.12);
-    }
-    .hero h1{
-      font-size:clamp(42px,5.2vw,76px);
-      line-height:1.03;
-      font-weight:800;
-      letter-spacing:-1.5px;
-      margin:0 0 20px;
-    }
-    .hero h1 span{color:var(--primary)}
-    .hero-lead{
-      max-width:680px;
-      font-size:20px;
-      line-height:1.9;
-      color:#526868;
-      margin-bottom:28px;
-    }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-main,.btn-soft{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      border-radius:14px;padding:13px 21px;font-weight:700;
-      transition:.25s;border:1px solid transparent;
-    }
-    .btn-main{background:var(--primary);color:#fff;box-shadow:0 14px 30px rgba(8,127,115,.2)}
-    .btn-main:hover{background:var(--primary-dark);color:#fff;transform:translateY(-2px)}
-    .btn-soft{background:#fff;color:var(--primary);border-color:#cfe8e4}
-    .btn-soft:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.07);color:var(--primary)}
-
-    .hero-points{
-      display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;
-      color:#3d5958;font-size:15px;font-weight:600;
-    }
-    .hero-points span{display:flex;align-items:center;gap:8px}
-    .hero-points i{color:#12a08f}
-
-    .doctor-wrap{position:relative;z-index:2}
-    .doctor-card{
-      position:relative;
-      max-width:500px;margin:auto;
-      padding:16px;
-      background:rgba(255,255,255,.65);
-      border:1px solid rgba(255,255,255,.8);
-      border-radius:32px;
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(10px);
-    }
-    .doctor-photo{
-      width:100%;
-      aspect-ratio:4/5;
-      object-fit:cover;
-      border-radius:24px;
-      object-position:center top;
-    }
-    .doctor-badge{
-      position:absolute;left:-25px;bottom:45px;
-      background:#fff;border:1px solid var(--line);
-      border-radius:18px;padding:14px 18px;
-      box-shadow:0 18px 40px rgba(0,0,0,.12);
-      display:flex;align-items:center;gap:11px;
-    }
-    .doctor-badge .icon{
-      width:44px;height:44px;border-radius:14px;
-      display:grid;place-items:center;background:var(--mint);color:var(--primary);
-    }
-    .doctor-badge strong{display:block;font-size:15px}
-    .doctor-badge small{color:var(--muted)}
-
-    .trust-strip{
-      position:relative;z-index:5;
-      margin-top:-35px;
-    }
-    .trust-box{
-      background:#fff;border:1px solid var(--line);
-      border-radius:22px;box-shadow:0 18px 45px rgba(8,65,61,.09);
-      padding:22px 28px;
-    }
-    .trust-item{display:flex;align-items:center;gap:12px}
-    .trust-icon{
-      width:46px;height:46px;border-radius:14px;background:var(--mint);
-      display:grid;place-items:center;color:var(--primary);font-size:18px;
-    }
-    .trust-item strong{display:block;font-size:18px;line-height:1.1}
-    .trust-item small{color:var(--muted)}
-
-    .section{padding:100px 0}
-    .section.alt{background:var(--cream)}
-    .section-head{max-width:720px;margin:0 auto 48px;text-align:center}
-    .section-kicker{
-      color:var(--primary);font-size:14px;font-weight:800;
-      text-transform:uppercase;letter-spacing:1.5px;
-      margin-bottom:8px;
-    }
-    .section-title{font-size:clamp(31px,4vw,48px);font-weight:800;line-height:1.15;margin-bottom:13px}
-    .section-subtitle{font-size:18px;color:var(--muted);line-height:1.8;margin:0}
-
-    .about-image{
-      border-radius:28px;overflow:hidden;
-      box-shadow:var(--shadow);height:100%;min-height:500px;
-    }
-    .about-image img{width:100%;height:100%;object-fit:cover;object-position:center top}
-    .about-copy{padding:18px 0 18px 30px}
-    .about-copy h3{font-size:32px;font-weight:800;margin-bottom:16px}
-    .about-copy p{font-size:17px;color:#617271;line-height:1.9}
-    .credential{
-      display:flex;gap:13px;align-items:flex-start;
-      padding:13px 0;border-bottom:1px solid var(--line);
-    }
-    .credential i{color:var(--primary);margin-top:5px}
-    .credential strong{display:block}
-    .credential span{color:var(--muted);font-size:14px}
-
-    .specialty-card{
-      height:100%;background:#fff;border:1px solid var(--line);
-      border-radius:22px;padding:28px;transition:.3s;
-    }
-    .specialty-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#bde2dc}
-    .specialty-icon{
-      width:58px;height:58px;border-radius:17px;
-      background:var(--mint);color:var(--primary);
-      display:grid;place-items:center;font-size:22px;margin-bottom:20px;
-    }
-    .specialty-card h4{font-size:22px;font-weight:800}
-    .specialty-card p{color:var(--muted);line-height:1.8;margin:0}
-
-    .stats{
-      background:linear-gradient(135deg,#073e39,#0b6c62);
-      color:#fff;position:relative;overflow:hidden;
-    }
-    .stats:before{
-      content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(255,255,255,.08);
-      border-radius:50%;right:-180px;top:-240px;
-    }
-    .stat{position:relative;text-align:center;padding:18px}
-    .stat i{font-size:24px;color:#78ded0;margin-bottom:10px}
-    .stat-number{font-family:"Manrope",sans-serif;font-size:42px;font-weight:800}
-    .stat-label{color:#c4e6e1;font-size:16px}
-
-    .timeline{position:relative;padding-left:30px}
-    .timeline:before{
-      content:"";position:absolute;left:7px;top:5px;bottom:5px;width:2px;background:#cce7e3;
-    }
-    .timeline-item{position:relative;padding:0 0 32px 25px}
-    .timeline-item:last-child{padding-bottom:0}
-    .timeline-item:before{
-      content:"";position:absolute;left:-30px;top:4px;
-      width:16px;height:16px;border-radius:50%;background:var(--primary);
-      box-shadow:0 0 0 6px #dff4f0;
-    }
-    .timeline-year{
-      display:inline-block;color:var(--primary);font-weight:800;
-      background:var(--mint);padding:5px 11px;border-radius:999px;font-size:13px;
-      margin-bottom:8px;
-    }
-    .timeline-item h4{font-weight:800;font-size:21px;margin-bottom:6px}
-    .timeline-item p{color:var(--muted);line-height:1.8;margin:0}
-
-    .book-card{
-      height:100%;background:#fff;border:1px solid var(--line);
-      border-radius:24px;overflow:hidden;transition:.3s;
-    }
-    .book-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .book-card img{height:280px;width:100%;object-fit:cover}
-    .book-body{padding:22px}
-    .book-tag{color:var(--primary);font-size:12px;font-weight:800;text-transform:uppercase}
-    .book-body h4{font-weight:800;margin:6px 0 14px}
-    .price{font-family:"Manrope",sans-serif;font-size:24px;font-weight:800;color:var(--primary)}
-
-    .blog-card{
-      height:100%;background:#fff;border:1px solid var(--line);border-radius:22px;
-      overflow:hidden;transition:.3s;
-    }
-    .blog-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-    .blog-card img{width:100%;height:205px;object-fit:cover}
-    .blog-body{padding:22px}
-    .blog-meta{font-size:13px;color:#8a9998}
-    .blog-body h4{font-size:21px;font-weight:800;margin:8px 0}
-    .blog-body p{color:var(--muted);line-height:1.7}
-
-    .cta{
-      background:linear-gradient(135deg,#e8f8f5,#f7fcfb);
-      border:1px solid #ccebe6;border-radius:30px;padding:55px;
-      position:relative;overflow:hidden;
-    }
-    .cta:after{
-      content:"";position:absolute;width:260px;height:260px;border-radius:50%;
-      background:rgba(22,163,148,.09);right:-80px;top:-100px;
-    }
-    .cta h2{font-size:40px;font-weight:800;position:relative;z-index:1}
-    .cta p{font-size:18px;color:var(--muted);max-width:700px;line-height:1.8;position:relative;z-index:1}
-
-    footer{background:#082f2c;color:#c8e4e0;padding:55px 0 22px}
-    footer h5{color:#fff;font-weight:800}
-    footer p,footer a{color:#a9c8c4}
-    footer a:hover{color:#fff}
-    .footer-social{
-      display:flex;gap:9px;margin-top:18px
-    }
-    .footer-social a{
-      width:40px;height:40px;border-radius:12px;
-      background:rgba(255,255,255,.07);
-      display:grid;place-items:center;color:#d9f3ef;
-    }
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:35px;padding-top:18px;font-size:13px}
-
-    .mobile-call{
-      display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:1000;
-      background:var(--primary);color:#fff;border-radius:16px;padding:13px;
-      text-align:center;font-weight:800;box-shadow:0 15px 35px rgba(0,0,0,.2);
-    }
-
-    @media(max-width:991px){
-      .topbar-left .address{display:none}
-      .navbar-collapse{padding-top:15px}
-      .hero{padding:60px 0 75px}
-      .doctor-wrap{margin-top:40px}
-      .about-copy{padding:30px 0 0}
-      .section{padding:75px 0}
-    }
-    @media(max-width:767px){
-      .topbar-inner{justify-content:center;min-height:38px;font-size:12px}
-      .topbar-right{display:none}
-      .brand-name{font-size:17px}
-      .brand-tag{font-size:10px}
-      .brand img{width:45px;height:45px}
-      .hero h1{font-size:43px}
-      .hero-lead{font-size:17px;line-height:1.8}
-      .doctor-card{padding:10px;border-radius:25px}
-      .doctor-photo{border-radius:18px}
-      .doctor-badge{left:10px;bottom:22px;padding:10px 12px}
-      .doctor-badge .icon{width:38px;height:38px}
-      .trust-strip{margin-top:-20px}
-      .trust-box{padding:18px}
-      .trust-item{margin:8px 0}
-      .section{padding:62px 0}
-      .section-title{font-size:32px}
-      .section-subtitle{font-size:16px}
-      .about-image{min-height:370px}
-      .cta{padding:32px 22px;border-radius:22px}
-      .cta h2{font-size:29px}
-      .mobile-call{display:block}
-      body{padding-bottom:65px}
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">
-        <span class="address"><i class="fa-solid fa-location-dot"></i>হাবিব কমপ্লেক্স, দক্ষিনখান বাজার, উত্তরা, ঢাকা</span>
-        <a href="tel:+8801856939360"><i class="fa-solid fa-phone"></i>+880 1856-939360</a>
+        <div class="hero-points">
+          <span><i class="fa-solid fa-circle-check"></i> ডিএইচএমএস</span>
+          <span><i class="fa-solid fa-circle-check"></i> এমপিএইচ</span>
+          <span><i class="fa-solid fa-circle-check"></i> রেজি. নং ৩৯৯৫১</span>
+        </div>
       </div>
-      <div class="topbar-right">
-        <a href="mailto:driqbalhossain@gmail.com"><i class="fa-solid fa-envelope"></i> driqbalhossain@gmail.com</a>
-        <a href="https://www.facebook.com/MahiHomeopathy" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+
+      <div class="col-lg-5 doctor-wrap">
+        <div class="doctor-card">
+          <img class="doctor-photo"
+            src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%209.56.38%20AM.jpeg"
+            alt="ডা: মো: ইকবাল হোসেন">
+          <div class="doctor-badge">
+            <div class="icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <strong>ডা: মো: ইকবাল হোসেন</strong>
+              <small>হোমিওপ্যাথি কনসালটেন্ট</small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</header>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
-    <div class="container py-2">
-      <a class="brand" href="https://driqbalhossain.com/">
-        <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%2010.01.02%20AM.jpeg" alt="ডা: মো: ইকবাল হোসেন">
-        <span>
-          <span class="brand-name d-block">ডা: মো: ইকবাল হোসেন</span>
-          <span class="brand-tag">হোমিওপ্যাথি চিকিৎসক ও আধুনিক চিকিৎসা গবেষক</span>
-        </span>
-      </a>
-
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <i class="fa-solid fa-bars fs-4"></i>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-        <ul class="navbar-nav align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link active" href="https://driqbalhossain.com/">হোম</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://driqbalhossain.com/about-us">পরিচিতি</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://driqbalhossain.com/timeline">টাইমলাইন</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://driqbalhossain.com/gallery">গ্যালারি</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://driqbalhossain.com/videos">ভিডিও</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://driqbalhossain.com/events">ইভেন্ট</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://driqbalhossain.com/news">ব্লগ</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://driqbalhossain.com/shop"><i class="fa-solid fa-bag-shopping me-1"></i> শপ/ইবুক</a></li>
-          <li class="nav-item ms-lg-2"><a class="nav-link nav-cta" href="https://driqbalhossain.com/contact">যোগাযোগ করুন</a></li>
-        </ul>
+<!-- TRUST STRIP -->
+<div class="container trust-strip">
+  <div class="trust-box">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <div><strong>ব্যক্তিকেন্দ্রিক সেবা</strong><small>রোগীর অবস্থা অনুযায়ী</small></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-microscope"></i></div>
+          <div><strong>গবেষণাভিত্তিক দৃষ্টিভঙ্গি</strong><small>আধুনিক পদ্ধতির সমন্বয়</small></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div><strong>রোগীর আস্থা</strong><small>সুস্থতাই আমাদের অগ্রাধিকার</small></div>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
+</div>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container position-relative">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-7 hero-content">
-          <div class="eyebrow"><span class="dot"></span> নিরাপদ ও ব্যক্তিকেন্দ্রিক চিকিৎসা সেবা</div>
-
-          <h1>আপনার সুস্থতার পথে<br><span>অভিজ্ঞতার আস্থা</span></h1>
-
-          <p class="hero-lead">
-            ডা: মো: ইকবাল হোসেন — হোমিওপ্যাথি চিকিৎসক ও আধুনিক চিকিৎসা গবেষক।
-            চর্ম, যৌন ও দীর্ঘমেয়াদী রোগের ক্ষেত্রে রোগীর সামগ্রিক অবস্থা বিবেচনা করে
-            ব্যক্তিকেন্দ্রিক চিকিৎসা পরিকল্পনা প্রদান করা হয়।
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="about-image">
+          <img src="https://driqbalhossain.com/uploads/media/m-20260418175011-1927.jpg" alt="ডা: মো: ইকবাল হোসেন">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="about-copy">
+          <div class="section-kicker">পরিচিতি</div>
+          <h3>চিকিৎসায় অভিজ্ঞতা, বিশ্লেষণে যত্ন</h3>
+          <p>
+            ডা. মোঃ ইকবাল হোসেন একজন দক্ষ ও নিবেদিতপ্রাণ হোমিওপ্যাথিক চিকিৎসক।
+            তিনি রোগীর বাহ্যিক লক্ষণের পাশাপাশি শারীরিক গঠন, মানসিক অবস্থা ও জীবনযাত্রার
+            সামগ্রিক দিক বিবেচনা করে চিকিৎসা পরিকল্পনা তৈরি করেন।
           </p>
 
-          <div class="hero-actions">
-            <a href="https://driqbalhossain.com/contact" class="btn-main">
-              <i class="fa-solid fa-calendar-check"></i> সিরিয়াল নিতে যোগাযোগ করুন
-            </a>
-            <a href="https://driqbalhossain.com/about-us" class="btn-soft">
-              চিকিৎসক সম্পর্কে <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <div class="credential">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div><strong>ডিগ্রি</strong><span>ডিএইচএমএস (হোমিওপ্যাথি), এমপিএইচ (জনস্বাস্থ্য পুষ্টি)</span></div>
+          </div>
+          <div class="credential">
+            <i class="fa-solid fa-id-card"></i>
+            <div><strong>রেজিস্ট্রেশন</strong><span>রেজিস্ট্রেশন নং: ৩৯৯৫১</span></div>
+          </div>
+          <div class="credential">
+            <i class="fa-solid fa-hospital"></i>
+            <div><strong>পদবী</strong><span>কনসালটেন্ট – মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টার</span></div>
           </div>
 
-          <div class="hero-points">
-            <span><i class="fa-solid fa-circle-check"></i> ডিএইচএমএস</span>
-            <span><i class="fa-solid fa-circle-check"></i> এমপিএইচ</span>
-            <span><i class="fa-solid fa-circle-check"></i> রেজি. নং ৩৯৯৫১</span>
+          <div class="pill-group">
+            <span class="pill"><i class="fa-solid fa-circle-check"></i> সম্পূর্ণ পার্শ্বপ্রতিক্রিয়ামুক্ত</span>
+            <span class="pill"><i class="fa-solid fa-circle-check"></i> রোগের কারণ ভিত্তিক চিকিৎসা</span>
+            <span class="pill"><i class="fa-solid fa-circle-check"></i> দীর্ঘমেয়াদী অসুস্থতার স্থায়ী সমাধান</span>
+            <span class="pill"><i class="fa-solid fa-circle-check"></i> আধুনিক ও বিজ্ঞানসম্মত পদ্ধতি</span>
           </div>
+
+          <div class="notice">
+            <i class="fa-solid fa-quote-left me-2"></i>
+            “হোমিওপ্যাথি শুধু রোগ নয়, বরং সম্পূর্ণ রোগীকে সুস্থ করার বিজ্ঞান।”
+          </div>
+
+          <a href="/about-us" class="btn-main mt-4">
+            বিস্তারিত পরিচিতি <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="col-lg-5 doctor-wrap">
-          <div class="doctor-card">
-            <img class="doctor-photo"
-              src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%209.56.38%20AM.jpeg"
-              alt="ডা: মো: ইকবাল হোসেন">
-            <div class="doctor-badge">
-              <div class="icon"><i class="fa-solid fa-user-doctor"></i></div>
-              <div>
-                <strong>ডা: মো: ইকবাল হোসেন</strong>
-                <small>হোমিওপ্যাথি কনসালটেন্ট</small>
-              </div>
+<!-- BOOK -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">শপ / ইবুক</div>
+      <h2 class="section-title">স্বাস্থ্য বিষয়ক প্রকাশনা</h2>
+      <p class="section-subtitle">জ্ঞান ও সচেতনতা বৃদ্ধির জন্য আমাদের ডিজিটাল প্রকাশনা।</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-10 col-md-6 col-lg-4">
+        <div class="book-card">
+          <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%2010.10.38%20AM.jpeg" alt="সুস্থ যৌন জীবন">
+          <div class="book-body">
+            <div class="book-tag">Digital Publication</div>
+            <h4>সুস্থ যৌন জীবন</h4>
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="price">৳২১০</span>
+              <a href="/product/modern-homeopathy-guide" class="btn-main py-2 px-3">বিস্তারিত</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </header>
 
-  <!-- TRUST STRIP -->
-  <div class="container trust-strip">
-    <div class="trust-box">
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fa-solid fa-stethoscope"></i></div>
-            <div><strong>ব্যক্তিকেন্দ্রিক সেবা</strong><small>রোগীর অবস্থা অনুযায়ী</small></div>
+    <div class="text-center mt-4">
+      <a href="/shop" class="btn-soft">সব ইবুক / প্রডাক্ট দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">চিকিৎসা যাত্রা</div>
+      <h2 class="section-title">অভিজ্ঞতার ধারাবাহিকতা</h2>
+      <p class="section-subtitle">শিক্ষা, গবেষণা ও চিকিৎসা সেবার গুরুত্বপূর্ণ মাইলফলক।</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">২০১৮</span>
+            <h4>শিক্ষা জীবন</h4>
+            <p>বাংলাদেশ হোমিওপ্যাথিক মেডিকেল কলেজ হাসপাতাল থেকে কৃতিত্বের সাথে ডিএইচএমএস ডিগ্রি অর্জন।</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">২০১৯</span>
+            <h4>গবেষণা ও ইন্টার্নশিপ</h4>
+            <p>জটিল ক্রনিক রোগের ওপর বিশেষ গবেষণা এবং অভিজ্ঞ চিকিৎসকদের তত্ত্বাবধানে ইন্টার্নশিপ সম্পন্ন।</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">২০২০</span>
+            <h4>নিজস্ব ক্লিনিক প্রতিষ্ঠা</h4>
+            <p>মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টার — আধুনিক ও বিজ্ঞানসম্মত হোমিওপ্যাথিক চিকিৎসার এক বিশ্বস্ত ঠিকানা। এখানে অভিজ্ঞ চিকিৎসকের তত্ত্বাবধানে রোগীর সম্পূর্ণ শারীরিক ও মানসিক অবস্থা বিশ্লেষণ করে ব্যক্তিকেন্দ্রিক চিকিৎসা প্রদান করা হয়। চর্ম, যৌন ও দীর্ঘমেয়াদী জটিল রোগের নিরাপদ, পার্শ্বপ্রতিক্রিয়ামুক্ত চিকিৎসায় আমরা প্রতিশ্রুতিবদ্ধ।</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">২০২০–বর্তমান</span>
+            <h4>সফলতা ও স্বীকৃতি</h4>
+            <p>মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টার প্রতিষ্ঠার পর থেকে ধারাবাহিকভাবে রোগীদের আস্থা ও সন্তুষ্টি অর্জন করে আসছে। অভিজ্ঞ চিকিৎসা সেবা, সঠিক রোগ নির্ণয় এবং ব্যক্তিকেন্দ্রিক চিকিৎসা পদ্ধতির মাধ্যমে বহু রোগী জটিল ও দীর্ঘমেয়াদী সমস্যা থেকে সফলভাবে সুস্থতা লাভ করেছেন। বিশ্বাস, অভিজ্ঞতা ও সফলতার সমন্বয়—এই আমাদের গর্ব।</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fa-solid fa-microscope"></i></div>
-            <div><strong>গবেষণাভিত্তিক দৃষ্টিভঙ্গি</strong><small>আধুনিক পদ্ধতির সমন্বয়</small></div>
-          </div>
+        <div class="text-center mt-4">
+          <a href="/timeline" class="btn-soft">সম্পূর্ণ টাইমলাইন দেখুন <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        <div class="col-md-4">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-            <div><strong>রোগীর আস্থা</strong><small>সুস্থতাই আমাদের অগ্রাধিকার</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">লক্ষ্য ও দৃষ্টি</div>
+      <h2 class="section-title">আমাদের পরিকল্পনা, লক্ষ্য ও ভিশন</h2>
+      <p class="section-subtitle">আমরা যেখানে পৌঁছাতে চাই, আর কীভাবে সেটা বাস্তবায়ন করছি।</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="visionAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#vision1">
+                <span class="stat-check"><i class="fa-solid fa-arrow-right text-primary"></i></span>
+                ভবিষ্যৎ পরিকল্পনা
+              </button>
+            </h2>
+            <div id="vision1" class="accordion-collapse collapse show" data-bs-parent="#visionAccordion">
+              <div class="accordion-body">
+                মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টারের লক্ষ্য হলো আধুনিক ও গবেষণাভিত্তিক হোমিওপ্যাথিক চিকিৎসা সেবা আরও বিস্তৃত করা। উন্নত চিকিৎসা পদ্ধতি, দক্ষতা বৃদ্ধি এবং রোগীকেন্দ্রিক সেবার মাধ্যমে একটি বিশ্বস্ত ও মানসম্মত স্বাস্থ্যসেবা কেন্দ্র হিসেবে প্রতিষ্ঠিত হওয়াই আমাদের প্রধান পরিকল্পনা।<br>
+                রোগীদের জন্য আরও উন্নত, নিরাপদ ও কার্যকর চিকিৎসা নিশ্চিত করতে আমরা ক্রমাগত কাজ করে যাচ্ছি।
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vision2">
+                <span class="stat-check"><i class="fa-solid fa-arrow-right text-primary"></i></span>
+                আমাদের লক্ষ্য
+              </button>
+            </h2>
+            <div id="vision2" class="accordion-collapse collapse" data-bs-parent="#visionAccordion">
+              <div class="accordion-body">
+                ন্যায্য মূল্যে পার্শ্বপ্রতিক্রিয়ামুক্ত চিকিৎসা এবং রোগীদের জন্য একটি নিরোগ সুন্দর পৃথিবী গড়ে তোলার নিরন্তর চেষ্টা।
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vision3">
+                <span class="stat-check"><i class="fa-solid fa-arrow-right text-primary"></i></span>
+                ভিশন
+              </button>
+            </h2>
+            <div id="vision3" class="accordion-collapse collapse" data-bs-parent="#visionAccordion">
+              <div class="accordion-body">
+                হোমিওপ্যাথি নিয়ে প্রচলিত ভিত্তিহীন ধারণা দূর করে একে সবার আস্থার প্রধান চিকিৎসা পদ্ধতি হিসেবে প্রতিষ্ঠা করা।
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5">
-          <div class="about-image">
-            <img src="https://driqbalhossain.com/uploads/media/m-20260418175011-1927.jpg" alt="ডা: মো: ইকবাল হোসেন">
-          </div>
+<!-- SPECIALTIES -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">বিশেষ দক্ষতা</div>
+      <h2 class="section-title">যে সেবাগুলোতে বিশেষ গুরুত্ব</h2>
+      <p class="section-subtitle">রোগীর প্রয়োজন অনুযায়ী পরামর্শ ও ব্যক্তিকেন্দ্রিক চিকিৎসা পরিকল্পনা।</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="specialty-card">
+          <div class="specialty-icon"><i class="fa-solid fa-hand-dots"></i></div>
+          <h4>চর্মরোগ</h4>
+          <p>বিভিন্ন ধরনের চর্ম সমস্যায় রোগীর অবস্থা ও উপসর্গ বিশ্লেষণ করে চিকিৎসা পরামর্শ।</p>
         </div>
-        <div class="col-lg-7">
-          <div class="about-copy">
-            <div class="section-kicker">পরিচিতি</div>
-            <h3>চিকিৎসায় অভিজ্ঞতা, বিশ্লেষণে যত্ন</h3>
-            <p>
-              ডা. মোঃ ইকবাল হোসেন একজন দক্ষ ও নিবেদিতপ্রাণ হোমিওপ্যাথিক চিকিৎসক।
-              তিনি রোগীর বাহ্যিক লক্ষণের পাশাপাশি শারীরিক গঠন, মানসিক অবস্থা ও জীবনযাত্রার
-              সামগ্রিক দিক বিবেচনা করে চিকিৎসা পরিকল্পনা তৈরি করেন।
-            </p>
-
-            <div class="credential">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div><strong>ডিগ্রি</strong><span>ডিএইচএমএস (হোমিওপ্যাথি), এমপিএইচ (জনস্বাস্থ্য পুষ্টি)</span></div>
-            </div>
-            <div class="credential">
-              <i class="fa-solid fa-id-card"></i>
-              <div><strong>রেজিস্ট্রেশন</strong><span>রেজিস্ট্রেশন নং: ৩৯৯৫১</span></div>
-            </div>
-            <div class="credential">
-              <i class="fa-solid fa-hospital"></i>
-              <div><strong>পদবী</strong><span>কনসালটেন্ট – মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টার</span></div>
-            </div>
-
-            <a href="https://driqbalhossain.com/about-us" class="btn-main mt-4">
-              বিস্তারিত পরিচিতি <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="specialty-card">
+          <div class="specialty-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h4>যৌন স্বাস্থ্য</h4>
+          <p>যৌন স্বাস্থ্য সম্পর্কিত সমস্যায় গোপনীয়তা ও সম্মান বজায় রেখে পরামর্শ ও চিকিৎসা সেবা।</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="specialty-card">
+          <div class="specialty-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <h4>দীর্ঘমেয়াদী রোগ</h4>
+          <p>দীর্ঘদিনের ও জটিল সমস্যায় রোগীর সামগ্রিক ইতিহাস বিবেচনা করে চিকিৎসা পরিকল্পনা।</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SPECIALTIES -->
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-kicker">বিশেষ দক্ষতা</div>
-        <h2 class="section-title">যে সেবাগুলোতে বিশেষ গুরুত্ব</h2>
-        <p class="section-subtitle">রোগীর প্রয়োজন অনুযায়ী পরামর্শ ও ব্যক্তিকেন্দ্রিক চিকিৎসা পরিকল্পনা।</p>
+<!-- WHY CHOOSE US -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">কেন বেছে নেবেন</div>
+      <h2 class="section-title">আমাদের বিশেষত্ব, অঙ্গীকার ও কাজের ধরণ</h2>
+      <p class="section-subtitle">হোমিওপ্যাথি চিকিৎসার অনন্য সুবিধাগুলো জেনে নিন।</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="specialty-card">
+          <div class="specialty-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h4>প্রাকৃতিক নিরাময়</h4>
+          <p>প্রকৃতি থেকে প্রাপ্ত ঔষধি উপাদানে তৈরি হয় হোমিও ঔষধ, যা শরীরের রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করে।</p>
+        </div>
       </div>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="specialty-card">
-            <div class="specialty-icon"><i class="fa-solid fa-hand-dots"></i></div>
-            <h4>চর্মরোগ</h4>
-            <p>বিভিন্ন ধরনের চর্ম সমস্যায় রোগীর অবস্থা ও উপসর্গ বিশ্লেষণ করে চিকিৎসা পরামর্শ।</p>
-          </div>
+      <div class="col-md-4">
+        <div class="specialty-card">
+          <div class="specialty-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <h4>উন্নত ফলাফল</h4>
+          <p>আমরা রোগের উপশম নয় বরং সমূলে বিনাশ করতে বিশ্বাস করি, যাতে রোগটি পুনরায় ফিরে না আসে।</p>
         </div>
-        <div class="col-md-4">
-          <div class="specialty-card">
-            <div class="specialty-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-            <h4>যৌন স্বাস্থ্য</h4>
-            <p>যৌন স্বাস্থ্য সম্পর্কিত সমস্যায় গোপনীয়তা ও সম্মান বজায় রেখে পরামর্শ ও চিকিৎসা সেবা।</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="specialty-card">
-            <div class="specialty-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-            <h4>দীর্ঘমেয়াদী রোগ</h4>
-            <p>দীর্ঘদিনের ও জটিল সমস্যায় রোগীর সামগ্রিক ইতিহাস বিবেচনা করে চিকিৎসা পরিকল্পনা।</p>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="specialty-card">
+          <div class="specialty-icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <h4>নিরাপদ ও সহজ</h4>
+          <p>হোমিওপ্যাথি চিকিৎসা পদ্ধতি সকল বয়সের মানুষের জন্য নিরাপদ, কোমল ও পার্শ্বপ্রতিক্রিয়ামুক্ত। নিরাপদ সেবা, সহজ প্রয়োগ—আপনার সুস্থতায় আমাদের আস্থা।</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STATS -->
-  <section class="section stats">
-    <div class="container position-relative">
-      <div class="row g-4">
-        <div class="col-6 col-lg-3">
-          <div class="stat">
-            <i class="fa-solid fa-user-check"></i>
-            <div class="stat-number">৭,৪৪০+</div>
-            <div class="stat-label">সফল চিকিৎসা</div>
-          </div>
+<!-- STATS -->
+<section class="section stats">
+  <div class="container position-relative">
+    <div class="row g-4">
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <i class="fa-solid fa-user-check"></i>
+          <div class="stat-number">৭,৪৪০+</div>
+          <div class="stat-label">সফল চিকিৎসা</div>
         </div>
-        <div class="col-6 col-lg-3">
-          <div class="stat">
-            <i class="fa-solid fa-award"></i>
-            <div class="stat-number">৬+</div>
-            <div class="stat-label">বছরের অভিজ্ঞতা</div>
-          </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <i class="fa-solid fa-award"></i>
+          <div class="stat-number">৬+</div>
+          <div class="stat-label">বছরের অভিজ্ঞতা</div>
         </div>
-        <div class="col-6 col-lg-3">
-          <div class="stat">
-            <i class="fa-solid fa-users"></i>
-            <div class="stat-number">১,২০০+</div>
-            <div class="stat-label">চলমান রোগী</div>
-          </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <i class="fa-solid fa-users"></i>
+          <div class="stat-number">১,২০০+</div>
+          <div class="stat-label">চলমান রোগী</div>
         </div>
-        <div class="col-6 col-lg-3">
-          <div class="stat">
-            <i class="fa-solid fa-location-dot"></i>
-            <div class="stat-number">৬৪</div>
-            <div class="stat-label">জেলায় সেবা</div>
-          </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <i class="fa-solid fa-location-dot"></i>
+          <div class="stat-number">৬৪</div>
+          <div class="stat-label">জেলায় সেবা</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- JOURNEY -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-kicker">চিকিৎসা যাত্রা</div>
-        <h2 class="section-title">অভিজ্ঞতার ধারাবাহিকতা</h2>
-        <p class="section-subtitle">শিক্ষা, গবেষণা ও চিকিৎসা সেবার গুরুত্বপূর্ণ মাইলফলক।</p>
+<!-- VIDEO GALLERY -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">ভিডিও গ্যালারী</div>
+      <h2 class="section-title">গুরুত্বপূর্ণ ভিডিওগুলো দেখুন</h2>
+      <p class="section-subtitle">চিকিৎসা সংক্রান্ত পরামর্শ ও সচেতনতামূলক ভিডিও।</p>
+    </div>
+
+    <div class="filter-bar" id="videoFilter">
+      <button class="filter-btn active" data-filter="all">সব</button>
+    </div>
+
+    <div class="row g-4" id="videoGrid">
+      <div class="col-12 text-center text-muted py-5">
+        <i class="fa-solid fa-video" style="font-size:48px; opacity:0.3; display:block; margin-bottom:16px;"></i>
+        <p style="font-size:18px;">কোন ভিডিও পাওয়া যায়নি।</p>
+        <p style="font-size:14px;">শীঘ্রই ভিডিও যুক্ত করা হবে।</p>
       </div>
+    </div>
 
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="timeline">
-            <div class="timeline-item">
-              <span class="timeline-year">২০১৮</span>
-              <h4>শিক্ষা জীবন</h4>
-              <p>বাংলাদেশ হোমিওপ্যাথিক মেডিকেল কলেজ হাসপাতাল থেকে ডিএইচএমএস ডিগ্রি অর্জন।</p>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-year">২০১৯</span>
-              <h4>গবেষণা ও ইন্টার্নশিপ</h4>
-              <p>জটিল ক্রনিক রোগ নিয়ে বিশেষ গবেষণা ও অভিজ্ঞ চিকিৎসকদের তত্ত্বাবধানে ইন্টার্নশিপ।</p>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-year">২০২০</span>
-              <h4>মাহি হোমিওপ্যাথি এন্ড রিসার্চ সেন্টার</h4>
-              <p>আধুনিক ও রোগীকেন্দ্রিক হোমিওপ্যাথিক চিকিৎসা সেবাকে আরও বিস্তৃত করার উদ্যোগ।</p>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-year">২০২০–বর্তমান</span>
-              <h4>সেবা ও ধারাবাহিকতা</h4>
-              <p>রোগীর আস্থা, অভিজ্ঞতা ও গবেষণাভিত্তিক চিকিৎসা পদ্ধতির মাধ্যমে ধারাবাহিকভাবে সেবা প্রদান।</p>
-            </div>
+    <div class="text-center mt-4">
+      <a href="/videos" class="btn-soft">সব ভিডিও দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">ফটো গ্যালারি</div>
+      <h2 class="section-title">কর্মসূচি, ক্যাম্পেইন ও জনসম্পৃক্ততার কিছু মুহূর্ত</h2>
+      <p class="section-subtitle">চিকিৎসা সেবার বিভিন্ন কার্যক্রমের ছবি দেখুন।</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">সব</button>
+      <button class="filter-btn" data-filter="personal">ব্যক্তিগত</button>
+    </div>
+
+    <div class="g-grid" id="galleryGrid">
+      <div class="g-item" data-category="personal" data-image="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%209.56.38%20AM.jpeg" data-title="ডাক্তার চেম্বার রোগী দেখার সময়" data-caption="">
+        <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%209.56.38%20AM.jpeg" alt="ডাক্তার চেম্বার রোগী দেখার সময়">
+        <div class="cap">
+          <div style="font-weight:900">ডাক্তার চেম্বার রোগী দেখার সময়</div>
+          <div class="text-muted small"></div>
+        </div>
+      </div>
+      <div class="g-item" data-category="personal" data-image="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-o04-08%20at%209.56.38%20AM.jpeg" data-title="ডাক্তার চেম্বার রোগী দেখার সময়" data-caption="">
+        <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-o04-08%20at%209.56.38%20AM.jpeg" alt="ডাক্তার চেম্বার রোগী দেখার সময়">
+        <div class="cap">
+          <div style="font-weight:900">ডাক্তার চেম্বার রোগী দেখার সময়</div>
+          <div class="text-muted small"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/gallery" class="btn-soft">আরোও দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY MODAL -->
+<div class="g-modal" id="galleryModal">
+  <div class="g-dialog">
+    <button class="g-close" id="gCloseModal">&times;</button>
+    <div class="g-modal-body">
+      <div class="g-modal-media">
+        <img id="gModalImg" src="" alt="">
+      </div>
+      <div class="g-modal-meta">
+        <div class="g-modal-cat" id="gModalCat"></div>
+        <h3 class="g-modal-title" id="gModalTitle"></h3>
+        <p class="g-modal-caption" id="gModalCaption"></p>
+        <div class="g-modal-actions">
+          <a class="btn-soft" id="gModalOpenOriginal" href="#" target="_blank">ছবি নতুন ট্যাবে</a>
+        </div>
+      </div>
+    </div>
+    <button class="g-nav g-prev" id="gPrev">&lsaquo;</button>
+    <button class="g-nav g-next" id="gNext">&rsaquo;</button>
+  </div>
+</div>
+
+<!-- BLOG -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">স্বাস্থ্য ব্লগ</div>
+      <h2 class="section-title">স্বাস্থ্য সচেতনতার জন্য পড়ুন</h2>
+      <p class="section-subtitle">সুস্থ জীবনযাপন ও স্বাস্থ্য বিষয়ে নিয়মিত পরামর্শ।</p>
+    </div>
+
+    <div class="filter-bar" id="blogFilter">
+      <button class="filter-btn active" data-filter="all">সব</button>
+      <button class="filter-btn" data-filter="c">চিকিৎসা</button>
+    </div>
+
+    <div class="row g-4" id="blogGrid">
+      <div class="col-md-4 blog-item" data-category="c">
+        <article class="blog-card">
+          <img src="https://driqbalhossain.com/uploads/media/m-20260418180605-3241.jpg" alt="সুষম খাদ্য গ্রহণের গুরুত্ব">
+          <div class="blog-body">
+            <div class="blog-meta"><i class="fa-regular fa-calendar me-1"></i> ১৮ Apr ২০২৬</div>
+            <div class="blog-meta"><i class="fa-solid fa-tags me-1"></i> চিকিৎসা</div>
+            <h4>সুষম খাদ্য গ্রহণের গুরুত্ব</h4>
+            <p>সুষম খাদ্য বলতে এমন খাদ্যকে বোঝায়, যেখানে শরীরের প্রয়োজনীয় সকল পুষ্টি উপাদান—কার্বোহাইড্রেট, প্রোটিন, ফ্যাট, ভিটামিন ও মিনারেল—সঠিক পরিমাণে থাকে। এটি সুস্থ জীবনযাপনের মূল ভিত্তি।</p>
+            <a href="/news/item-20260418180729-565" class="btn-soft py-2 px-3">পড়ুন</a>
           </div>
-          <div class="text-center mt-4">
-            <a href="https://driqbalhossain.com/timeline" class="btn-soft">সম্পূর্ণ টাইমলাইন দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+
+      <div class="col-md-4 blog-item" data-category="c">
+        <article class="blog-card">
+          <img src="https://driqbalhossain.com/uploads/media/m-20260418181324-6360.jpg" alt="দৈনিক হাঁটা ও ফিটনেস">
+          <div class="blog-body">
+            <div class="blog-meta"><i class="fa-regular fa-calendar me-1"></i> ১৮ Apr ২০২৬</div>
+            <div class="blog-meta"><i class="fa-solid fa-tags me-1"></i> চিকিৎসা</div>
+            <h4>দৈনিক হাঁটা ও ফিটনেস রুটিন</h4>
+            <p>নিয়মিত হাঁটা ও দৈনন্দিন শারীরিক সক্রিয়তার উপকারিতা সম্পর্কে জানুন।</p>
+            <a href="/news/item-20260418181406-989" class="btn-soft py-2 px-3">পড়ুন</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOK -->
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-kicker">শপ / ইবুক</div>
-        <h2 class="section-title">স্বাস্থ্য বিষয়ক প্রকাশনা</h2>
-        <p class="section-subtitle">জ্ঞান ও সচেতনতা বৃদ্ধির জন্য আমাদের ডিজিটাল প্রকাশনা।</p>
+        </article>
       </div>
 
-      <div class="row justify-content-center">
-        <div class="col-sm-10 col-md-6 col-lg-4">
-          <div class="book-card">
-            <img src="https://driqbalhossain.com/uploads/media/WhatsApp%20Image%202026-04-08%20at%2010.10.38%20AM.jpeg" alt="সুস্থ যৌন জীবন">
-            <div class="book-body">
-              <div class="book-tag">Digital Publication</div>
-              <h4>সুস্থ যৌন জীবন</h4>
-              <div class="d-flex align-items-center justify-content-between">
-                <span class="price">৳২১০</span>
-                <a href="https://driqbalhossain.com/product/modern-homeopathy-guide" class="btn-main py-2 px-3">বিস্তারিত</a>
-              </div>
-            </div>
+      <div class="col-md-4 blog-item" data-category="c">
+        <article class="blog-card">
+          <img src="https://driqbalhossain.com/uploads/media/m-20260418182027-2476.jpg" alt="পানি পানের সঠিক নিয়ম">
+          <div class="blog-body">
+            <div class="blog-meta"><i class="fa-regular fa-calendar me-1"></i> ১৮ Apr ২০২৬</div>
+            <div class="blog-meta"><i class="fa-solid fa-tags me-1"></i> চিকিৎসা</div>
+            <h4>পানি পানের সঠিক নিয়ম</h4>
+            <p>শরীরের পানির ভারসাম্য ঠিক রাখা সুস্থ জীবনের অন্যতম শর্ত। সঠিকভাবে পানি পান করলে শরীরের সকল অঙ্গ-প্রত্যঙ্গ স্বাভাবিকভাবে কাজ করে এবং পানিশূন্যতা বা Dehydration থেকে রক্ষা পাওয়া যায়।</p>
+            <a href="/news/item-20260418182115-300" class="btn-soft py-2 px-3">পড়ুন</a>
           </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="https://driqbalhossain.com/shop" class="btn-soft">সব ইবুক / প্রডাক্ট দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
       </div>
     </div>
-  </section>
 
-  <!-- BLOG -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-kicker">স্বাস্থ্য ব্লগ</div>
-        <h2 class="section-title">স্বাস্থ্য সচেতনতার জন্য পড়ুন</h2>
-        <p class="section-subtitle">সুস্থ জীবনযাপন ও স্বাস্থ্য বিষয়ে নিয়মিত পরামর্শ।</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <article class="blog-card">
-            <img src="https://driqbalhossain.com/uploads/media/m-20260418180605-3241.jpg" alt="সুষম খাদ্য গ্রহণের গুরুত্ব">
-            <div class="blog-body">
-              <div class="blog-meta"><i class="fa-regular fa-calendar me-1"></i> ১৮ Apr ২০২৬</div>
-              <h4>সুষম খাদ্য গ্রহণের গুরুত্ব</h4>
-              <p>শরীরের প্রয়োজনীয় পুষ্টি উপাদান সঠিক পরিমাণে পাওয়ার জন্য সুষম খাদ্যের গুরুত্ব।</p>
-              <a href="https://driqbalhossain.com/news/item-20260418180729-565" class="btn-soft py-2 px-3">পড়ুন</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-md-4">
-          <article class="blog-card">
-            <img src="https://driqbalhossain.com/uploads/media/m-20260418181324-6360.jpg" alt="দৈনিক হাঁটা ও ফিটনেস">
-            <div class="blog-body">
-              <div class="blog-meta"><i class="fa-regular fa-calendar me-1"></i> ১৮ Apr ২০২৬</div>
-              <h4>দৈনিক হাঁটা ও ফিটনেস রুটিন</h4>
-              <p>নিয়মিত হাঁটা ও দৈনন্দিন শারীরিক সক্রিয়তার উপকারিতা সম্পর্কে জানুন।</p>
-              <a href="https://driqbalhossain.com/news/item-20260418181406-989" class="btn-soft py-2 px-3">পড়ুন</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-md-4">
-          <article class="blog-card">
-            <img src="https://driqbalhossain.com/uploads/media/m-20260418182027-2476.jpg" alt="পানি পানের সঠিক নিয়ম">
-            <div class="blog-body">
-              <div class="blog-meta"><i class="fa-regular fa-calendar me-1"></i> ১৮ Apr ২০২৬</div>
-              <h4>পানি পানের সঠিক নিয়ম</h4>
-              <p>শরীরে পানির ভারসাম্য ঠিক রাখতে সঠিকভাবে পানি পান করার প্রয়োজনীয়তা।</p>
-              <a href="https://driqbalhossain.com/news/item-20260418182115-300" class="btn-soft py-2 px-3">পড়ুন</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="text-center mt-5">
-        <a href="https://driqbalhossain.com/news" class="btn-main">সব ব্লগ দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
+    <div class="text-center mt-5">
+      <a href="/news" class="btn-main">সব ব্লগ দেখুন <i class="fa-solid fa-arrow-right"></i></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="section pt-0">
-    <div class="container">
-      <div class="cta">
-        <div class="section-kicker">যোগাযোগ</div>
-        <h2>আপনার স্বাস্থ্য নিয়ে কথা বলতে প্রস্তুত?</h2>
-        <p>
-          মতামত, পরামর্শ বা চিকিৎসা সংক্রান্ত যোগাযোগের জন্য সরাসরি আমাদের সাথে যোগাযোগ করুন।
-          আপনার প্রশ্ন ও প্রয়োজনকে গুরুত্বের সাথে বিবেচনা করা হবে।
-        </p>
-        <div class="d-flex flex-wrap gap-2 position-relative z-1">
-          <a href="tel:+8801856939360" class="btn-main"><i class="fa-solid fa-phone"></i> কল করুন</a>
-          <a href="https://driqbalhossain.com/contact" class="btn-soft"><i class="fa-solid fa-message"></i> মেসেজ পাঠান</a>
-        </div>
-      </div>
-    </div>
-  </section>
+{% endblock %}
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-5">
-          <h5>ডা: মো: ইকবাল হোসেন</h5>
-          <p>হোমিওপ্যাথি চিকিৎসক ও আধুনিক চিকিৎসা গবেষক</p>
-          <p><i class="fa-solid fa-location-dot me-2"></i>হাবিব কমপ্লেক্স, দক্ষিনখান বাজার, উত্তরা, ঢাকা</p>
-          <p><i class="fa-solid fa-phone me-2"></i><a href="tel:+8801856939360">+880 1856-939360</a></p>
-          <p><i class="fa-solid fa-envelope me-2"></i><a href="mailto:driqbalhossain@gmail.com">driqbalhossain@gmail.com</a></p>
+{% block extra_js %}
+{{ block.super }}
+<script>
+  // --- Gallery Filter & Modal ---
+  const galleryItems = document.querySelectorAll('#galleryGrid .g-item');
+  const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
 
-          <div class="footer-social">
-            <a href="https://www.facebook.com/MahiHomeopathy" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.facebook.com/MahiHomeopathy" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.facebook.com/MahiHomeopathy" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-          </div>
-        </div>
-
-        <div class="col-6 col-lg-3">
-          <h5>দ্রুত লিংক</h5>
-          <p><a href="https://driqbalhossain.com/about-us">পরিচিতি</a></p>
-          <p><a href="https://driqbalhossain.com/timeline">টাইমলাইন</a></p>
-          <p><a href="https://driqbalhossain.com/gallery">গ্যালারি</a></p>
-          <p><a href="https://driqbalhossain.com/events">ইভেন্ট</a></p>
-          <p><a href="https://driqbalhossain.com/news">ব্লগ</a></p>
-        </div>
-
-        <div class="col-6 col-lg-4">
-          <h5>অনলাইন সেবা</h5>
-          <p><a href="https://driqbalhossain.com/shop">শপ / ইবুক</a></p>
-          <p><a href="https://driqbalhossain.com/videos">ভিডিও</a></p>
-          <p><a href="https://driqbalhossain.com/my-orders">অর্ডার ট্র্যাক করুন</a></p>
-          <p><a href="https://driqbalhossain.com/contact">যোগাযোগ</a></p>
-        </div>
-      </div>
-
-      <div class="footer-bottom text-center">
-        Copyright © 2026 ডা. ইকবাল হোসেন | All Rights Reserved
-      </div>
-    </div>
-  </footer>
-
-  <a class="mobile-call" href="tel:+8801856939360">
-    <i class="fa-solid fa-phone-volume me-2"></i> এখনই কল করুন
-  </a>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Navbar shadow on scroll
-    const nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 15);
-    });
-
-    // Close mobile menu after clicking a link
-    document.querySelectorAll('#navMenu .nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        const menu = document.getElementById('navMenu');
-        if (menu.classList.contains('show')) {
-          bootstrap.Collapse.getOrCreateInstance(menu).hide();
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
         }
       });
     });
-  </script>
-</body>
-</html>
+  });
+
+  // Gallery Modal
+  const modal = document.getElementById('galleryModal');
+  const modalImg = document.getElementById('gModalImg');
+  const modalTitle = document.getElementById('gModalTitle');
+  const modalCat = document.getElementById('gModalCat');
+  const modalCaption = document.getElementById('gModalCaption');
+  const modalOpen = document.getElementById('gModalOpenOriginal');
+  let currentGalleryItems = [];
+  let currentIndex = 0;
+
+  function openGallery(index) {
+    const item = currentGalleryItems[index];
+    if (!item) return;
+    modalImg.src = item.dataset.image;
+    modalTitle.textContent = item.dataset.title || '';
+    modalCat.textContent = item.dataset.category === 'personal' ? 'ব্যক্তিগত' : '';
+    modalCaption.textContent = item.dataset.caption || '';
+    modalOpen.href = item.dataset.image;
+    currentIndex = index;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', function() {
+      currentGalleryItems = Array.from(galleryItems);
+      openGallery(i);
+    });
+  });
+
+  document.getElementById('gCloseModal').addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  document.getElementById('gPrev').addEventListener('click', () => {
+    if (currentIndex > 0) openGallery(currentIndex - 1);
+  });
+
+  document.getElementById('gNext').addEventListener('click', () => {
+    if (currentIndex < currentGalleryItems.length - 1) openGallery(currentIndex + 1);
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // --- Blog Filter ---
+  const blogItems = document.querySelectorAll('#blogGrid .blog-item');
+  const blogFilterBtns = document.querySelectorAll('#blogFilter .filter-btn');
+
+  blogFilterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      blogFilterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      blogItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}
